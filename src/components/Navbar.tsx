@@ -98,7 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
         {/* Action Buttons */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <a
-            href="/resume.html"
+            href="/Masud_Rana_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary"

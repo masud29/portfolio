@@ -137,7 +137,7 @@ export const Hero: React.FC = () => {
 
             {/* CTAs & Social Buttons */}
             <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.85rem', marginBottom: '2.5rem' }}>
-              <a href="/resume.html" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <a href="/Masud_Rana_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary">
                 <Download size={18} />
                 <span>Download Resume (PDF)</span>
               </a>
