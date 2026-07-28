@@ -56,6 +56,25 @@ export const SKILLS: Skill[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: 'ms-accounting',
+    title: 'MS Accounting & Advisory',
+    subtitle: 'Enterprise Financial Invoicing, Legal Case & ACL Portal',
+    domain: 'msaccounting.dhakaapps.com',
+    liveUrl: 'https://gac.dhakaapps.com',
+    category: 'Financial Services',
+    featured: true,
+    role: 'Full Stack Laravel Developer',
+    description: 'Comprehensive accounting and legal advisory platform featuring automated invoice generation, payment tracking, adviser commission strategy engine, legal case timeline management, document request vaults, and interactive appointment scheduling.',
+    highlights: [
+      'Engineered automated invoice itemization, payment processing, and financial reporting.',
+      'Developed adviser performance metrics and commission payout calculation strategies.',
+      'Architected legal case milestone activity timeline workflows, discussion boards, and client document request vaults.',
+      'Implemented granular Module-to-Role and Module-to-User Access Control (ACL) separating Admin, Adviser, and Client portals.'
+    ],
+    technologies: ['Laravel', 'PHP', 'MySQL', 'Invoicing & Payments', 'ACL Security', 'REST APIs', 'FullCalendar API', 'Bootstrap'],
+    architectureNotes: 'Built with modular Laravel architecture featuring dynamic ACL permissions, event-driven invoice lifecycle management, and client document submission workflows.'
+  },
+  {
     id: 'gaconnect',
     title: 'GAConnect',
     subtitle: 'Study Abroad Application & Visa Management Platform',

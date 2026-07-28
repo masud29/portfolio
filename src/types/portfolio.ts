@@ -15,7 +15,7 @@ export interface Project {
   subtitle: string;
   domain: string;
   liveUrl: string;
-  category: 'Full Stack' | 'Visa & Edu' | 'Streaming' | 'E-Commerce';
+  category: 'Full Stack' | 'Visa & Edu' | 'Streaming' | 'E-Commerce' | 'Financial Services';
   description: string;
   highlights: string[];
   technologies: string[];
