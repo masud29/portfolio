@@ -8,7 +8,7 @@ export const Projects: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const categories = ['All', 'Financial Services', 'Visa & Edu', 'Streaming', 'E-Commerce'];
+  const categories = ['All', 'Financial Services', 'Visa & Edu', 'Healthcare', 'Streaming', 'E-Commerce'];
 
   const filteredProjects = selectedCategory === 'All'
     ? PROJECTS

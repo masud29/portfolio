@@ -145,6 +145,25 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ['Laravel', 'React.js', 'Payment Gateway Integration', 'MySQL', 'RESTful API'],
     architectureNotes: 'Utilized asynchronous event queues for order notification emails and invoice generation.'
+  },
+  {
+    id: 'ab-siddique-medical',
+    title: 'AB Siddique Medical',
+    subtitle: 'Healthcare Services, Doctor Scheduling & Academic Portal',
+    domain: 'absiddiquemedical.com',
+    liveUrl: 'https://absiddiquemedical.com/',
+    category: 'Healthcare',
+    featured: true,
+    role: 'Full Stack Laravel Developer',
+    description: 'Comprehensive medical, healthcare, and institutional portal supporting doctor schedule management, online patient appointments, academic research repositories, admission application forms, and event registrations.',
+    highlights: [
+      'Built doctor schedule management, appointment booking engine, and patient intake workflows.',
+      'Developed online academic admission application forms and student applicant tracking system.',
+      'Implemented medical research & publication repository along with multi-office directory mapping.',
+      'Configured role-scoped administrative dashboard for medical board members and department staff.'
+    ],
+    technologies: ['Laravel', 'PHP', 'MySQL', 'Appointment Engine', 'Blade / Bootstrap', 'REST APIs', 'ACL'],
+    architectureNotes: 'Custom Laravel architecture featuring dynamic doctor availability scheduling, multi-department academic cataloging, and document storage.'
   }
 ];
 
