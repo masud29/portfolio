@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SKILLS } from '../data/portfolioData';
 import { SkillCategory } from '../types/portfolio';
-import { Cpu, Server, Layout, Database, Bot, Wrench } from 'lucide-react';
+import { Cpu, Server, Layout, Database, Bot, Wrench, ShieldCheck, Sparkles } from 'lucide-react';
 
 export const TechStack: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<SkillCategory | 'All'>('All');
@@ -19,18 +19,41 @@ export const TechStack: React.FC = () => {
     ? SKILLS
     : SKILLS.filter(s => s.category === activeCategory);
 
+  const getTierBadgeStyle = (tier: string) => {
+    switch (tier) {
+      case 'Core Stack':
+        return {
+          bg: 'rgba(99, 102, 241, 0.16)',
+          color: '#a5b4fc',
+          border: 'rgba(99, 102, 241, 0.3)'
+        };
+      case 'Proficient':
+        return {
+          bg: 'rgba(16, 185, 129, 0.14)',
+          color: '#34d399',
+          border: 'rgba(16, 185, 129, 0.3)'
+        };
+      default:
+        return {
+          bg: 'rgba(255, 255, 255, 0.06)',
+          color: 'var(--text-muted)',
+          border: 'var(--border-color)'
+        };
+    }
+  };
+
   return (
-    <section id="skills" style={{ padding: '5rem 0', background: 'var(--bg-secondary)' }}>
+    <section id="skills" style={{ padding: '5.5rem 0', background: 'var(--bg-secondary)' }}>
       <div className="container">
         {/* Section Header */}
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <div className="section-tag">
             <Cpu size={14} />
-            <span>Technical Expertise</span>
+            <span>Technical Capabilities</span>
           </div>
-          <h2 className="section-title">Skills & Modern Tech Stack</h2>
+          <h2 className="section-title">Verified Core Tech Stack</h2>
           <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            A comprehensive overview of my technical capabilities spanning Laravel backend architecture, React/TypeScript frontends, and AI-accelerated development.
+            Production-proven tools and frameworks utilized across 6+ web applications.
           </p>
 
           {/* Category Filter Tabs */}
@@ -69,70 +92,77 @@ export const TechStack: React.FC = () => {
           </div>
         </div>
 
-        {/* Skills Grid */}
+        {/* Modern Tag Cloud Grid */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
             gap: '1.25rem'
           }}
         >
-          {filteredSkills.map((skill, index) => (
-            <div
-              key={index}
-              className="gradient-border"
-              style={{
-                padding: '1.25rem 1.5rem',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                gap: '0.75rem'
-              }}
-            >
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                  <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#fff' }}>{skill.name}</h3>
-                  {skill.tag && (
-                    <span
-                      style={{
-                        fontSize: '0.72rem',
-                        padding: '0.15rem 0.6rem',
-                        borderRadius: 'var(--radius-full)',
-                        background: skill.featured ? 'rgba(99, 102, 241, 0.18)' : 'rgba(255,255,255,0.06)',
-                        color: skill.featured ? '#a5b4fc' : 'var(--text-muted)',
-                        fontWeight: 600
-                      }}
-                    >
-                      {skill.tag}
-                    </span>
-                  )}
+          {filteredSkills.map((skill, index) => {
+            const badgeStyle = getTierBadgeStyle(skill.tier);
+            return (
+              <div
+                key={index}
+                className="gradient-border"
+                style={{
+                  padding: '1.25rem 1.5rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  gap: '0.75rem',
+                  background: 'rgba(16, 23, 42, 0.75)'
+                }}
+              >
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                    <h3 style={{ fontSize: '1.02rem', fontWeight: 700, color: '#fff', lineHeight: 1.3 }}>{skill.name}</h3>
+                    {skill.tag && (
+                      <span
+                        style={{
+                          fontSize: '0.7rem',
+                          padding: '0.15rem 0.5rem',
+                          borderRadius: 'var(--radius-sm)',
+                          background: 'rgba(255,255,255,0.05)',
+                          color: 'var(--text-muted)',
+                          border: '1px solid var(--border-color)',
+                          whiteSpace: 'nowrap'
+                        }}
+                      >
+                        {skill.tag}
+                      </span>
+                    )}
+                  </div>
+
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                    Category: <span style={{ color: 'var(--text-secondary)' }}>{skill.category}</span>
+                  </div>
                 </div>
 
-                <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-                  Category: <span style={{ color: 'var(--text-secondary)' }}>{skill.category}</span>
-                </div>
-              </div>
-
-              {/* Progress Bar */}
-              <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '0.35rem' }}>
-                  <span>Proficiency</span>
-                  <span style={{ fontWeight: 600, color: 'var(--accent-indigo)' }}>{skill.level}%</span>
-                </div>
-                <div style={{ height: '6px', width: '100%', background: 'rgba(255,255,255,0.06)', borderRadius: '10px', overflow: 'hidden' }}>
-                  <div
+                {/* Tier Badge */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '0.5rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                  <span
                     style={{
-                      height: '100%',
-                      width: `${skill.level}%`,
-                      background: 'var(--gradient-brand)',
-                      borderRadius: '10px',
-                      transition: 'width 0.8s ease'
+                      fontSize: '0.75rem',
+                      fontWeight: 600,
+                      padding: '0.2rem 0.65rem',
+                      borderRadius: 'var(--radius-full)',
+                      background: badgeStyle.bg,
+                      color: badgeStyle.color,
+                      border: `1px solid ${badgeStyle.border}`,
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.35rem'
                     }}
-                  ></div>
+                  >
+                    <ShieldCheck size={13} />
+                    {skill.tier}
+                  </span>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

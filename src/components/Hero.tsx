@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
-import { Github, Linkedin, Mail, ArrowRight, Sparkles, CheckCircle2, ShieldCheck, MapPin } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowRight, Sparkles, CheckCircle2, ShieldCheck, MapPin, Download } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const titles = [
@@ -136,15 +136,20 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* CTAs & Social Buttons */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
-              <a href="#projects" className="btn-primary">
-                <span>View Portfolio Projects</span>
-                <ArrowRight size={18} />
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.85rem', marginBottom: '2.5rem' }}>
+              <a href="/resume.html" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                <Download size={18} />
+                <span>Download Resume (PDF)</span>
+              </a>
+
+              <a href="#projects" className="btn-secondary">
+                <span>View Projects</span>
+                <ArrowRight size={16} />
               </a>
 
               <a href="#contact" className="btn-secondary">
-                <Mail size={18} />
-                <span>Contact Me</span>
+                <Mail size={16} />
+                <span>Contact</span>
               </a>
 
               {/* Social Icons */}

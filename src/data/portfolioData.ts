@@ -20,38 +20,38 @@ export const PERSONAL_INFO = {
 
 export const SKILLS: Skill[] = [
   // Backend
-  { name: 'PHP', category: 'Backend', level: 92, tag: 'Core', featured: true },
-  { name: 'Laravel Framework', category: 'Backend', level: 95, tag: 'Expert', featured: true },
-  { name: 'RESTful API Development', category: 'Backend', level: 94, tag: 'Expert', featured: true },
-  { name: 'Role-Based Access Control (RBAC)', category: 'Backend', level: 90, tag: 'Security', featured: true },
-  { name: 'Payment Gateway Integration', category: 'Backend', level: 88, tag: 'Fintech' },
-  { name: 'WebSockets', category: 'Backend', level: 82, tag: 'Realtime' },
-  { name: 'Queue & Job Scheduling', category: 'Backend', level: 86, tag: 'Async' },
+  { name: 'PHP (8.x / ES6+)', category: 'Backend', tier: 'Core Stack', tag: 'Core Language' },
+  { name: 'Laravel Framework', category: 'Backend', tier: 'Core Stack', tag: 'MVC & Eloquent' },
+  { name: 'RESTful API Architecture', category: 'Backend', tier: 'Core Stack', tag: 'JSON APIs' },
+  { name: 'Role-Based Access Control (RBAC / ACL)', category: 'Backend', tier: 'Core Stack', tag: 'Security' },
+  { name: 'Payment Gateway Integration', category: 'Backend', tier: 'Proficient', tag: 'Fintech' },
+  { name: 'Queue & Job Scheduling', category: 'Backend', tier: 'Proficient', tag: 'Async Tasks' },
+  { name: 'WebSockets & Event Broadcasting', category: 'Backend', tier: 'Proficient', tag: 'Realtime' },
 
   // Frontend
-  { name: 'TypeScript', category: 'Frontend', level: 88, tag: 'In Demand', featured: true },
-  { name: 'React.js', category: 'Frontend', level: 90, tag: 'Frontend', featured: true },
-  { name: 'Next.js', category: 'Frontend', level: 84, tag: 'SSR/SSG', featured: true },
-  { name: 'JavaScript (ES6+)', category: 'Frontend', level: 92, tag: 'Core', featured: true },
-  { name: 'Tailwind CSS', category: 'Frontend', level: 90, tag: 'Styling', featured: true },
-  { name: 'HTML5 & CSS3', category: 'Frontend', level: 95, tag: 'Web' },
-  { name: 'Bootstrap & jQuery', category: 'Frontend', level: 85, tag: 'UI' },
+  { name: 'TypeScript', category: 'Frontend', tier: 'Core Stack', tag: 'Typed JS' },
+  { name: 'React.js', category: 'Frontend', tier: 'Core Stack', tag: 'SPA & Hooks' },
+  { name: 'Next.js', category: 'Frontend', tier: 'Proficient', tag: 'SSR / App Router' },
+  { name: 'JavaScript (ES6+)', category: 'Frontend', tier: 'Core Stack', tag: 'Modern JS' },
+  { name: 'Tailwind CSS', category: 'Frontend', tier: 'Core Stack', tag: 'Utility Styling' },
+  { name: 'HTML5 & CSS3', category: 'Frontend', tier: 'Core Stack', tag: 'Semantics' },
+  { name: 'Bootstrap & jQuery', category: 'Frontend', tier: 'Proficient', tag: 'Legacy & UI' },
 
   // Database
-  { name: 'MySQL', category: 'Database', level: 90, tag: 'Relational', featured: true },
-  { name: 'SQL Schema Design', category: 'Database', level: 92, tag: 'Architecture', featured: true },
-  { name: 'Redis Caching', category: 'Database', level: 82, tag: 'In-Memory', featured: true },
+  { name: 'MySQL Database', category: 'Database', tier: 'Core Stack', tag: 'Relational' },
+  { name: 'SQL Schema Architecture', category: 'Database', tier: 'Core Stack', tag: 'Indexing & Keys' },
+  { name: 'Redis Caching', category: 'Database', tier: 'Proficient', tag: 'In-Memory Cache' },
 
   // AI & Tools
-  { name: 'Cursor AI & GitHub Copilot', category: 'AI & Tools', level: 95, tag: 'AI Velocity', featured: true },
-  { name: 'OpenAI API Integration', category: 'AI & Tools', level: 88, tag: 'GenAI', featured: true },
-  { name: 'ChatGPT & Claude Workflows', category: 'AI & Tools', level: 94, tag: 'Prompting' },
+  { name: 'Cursor AI & GitHub Copilot', category: 'AI & Tools', tier: 'Core Stack', tag: '3x Velocity' },
+  { name: 'OpenAI API Integration', category: 'AI & Tools', tier: 'Proficient', tag: 'GenAI Tools' },
+  { name: 'ChatGPT & Claude Workflows', category: 'AI & Tools', tier: 'Core Stack', tag: 'Prompt Engineering' },
 
   // DevOps & Tools
-  { name: 'Git & GitHub / GitLab', category: 'DevOps', level: 90, tag: 'VCS', featured: true },
-  { name: 'Postman & API Testing', category: 'DevOps', level: 92, tag: 'APIs' },
-  { name: 'Docker (Basics)', category: 'DevOps', level: 75, tag: 'Containers' },
-  { name: 'CI/CD Fundamentals', category: 'DevOps', level: 80, tag: 'Deployment' }
+  { name: 'Git, GitHub & GitLab', category: 'DevOps', tier: 'Core Stack', tag: 'Version Control' },
+  { name: 'Postman API Testing', category: 'DevOps', tier: 'Core Stack', tag: 'API Docs' },
+  { name: 'CI/CD Pipelines & Vercel', category: 'DevOps', tier: 'Proficient', tag: 'Deployment' },
+  { name: 'Docker Fundamentals', category: 'DevOps', tier: 'Familiar', tag: 'Containers' }
 ];
 
 export const PROJECTS: Project[] = [

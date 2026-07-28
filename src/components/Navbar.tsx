@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Code2 } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Code2, Download } from 'lucide-react';
 
 interface NavbarProps {
   onContactClick: () => void;
@@ -95,8 +95,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
           ))}
         </nav>
 
-        {/* Action Button */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        {/* Action Buttons */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <a
+            href="/resume.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+            style={{ padding: '0.55rem 1rem', fontSize: '0.85rem' }}
+          >
+            <Download size={15} />
+            <span>Resume (PDF)</span>
+          </a>
+
           <button onClick={onContactClick} className="btn-primary" style={{ padding: '0.55rem 1.2rem', fontSize: '0.88rem' }}>
             <span>Hire Me</span>
             <ArrowUpRight size={16} />

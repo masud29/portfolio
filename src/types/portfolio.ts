@@ -3,9 +3,7 @@ export type SkillCategory = 'Backend' | 'Frontend' | 'Database' | 'AI & Tools' |
 export interface Skill {
   name: string;
   category: SkillCategory;
-  level: number; // 0 - 100
-  iconName?: string;
-  featured?: boolean;
+  tier: 'Core Stack' | 'Proficient' | 'Familiar';
   tag?: string;
 }
 
