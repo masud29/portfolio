@@ -295,7 +295,7 @@ export const Hero: React.FC = () => {
               >
                 <CheckCircle2 size={20} style={{ color: 'var(--accent-indigo)' }} />
                 <div style={{ fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
-                  <strong style={{ color: '#fff' }}>Vercel Ready:</strong> TypeScript frontend app configured for free Vercel Edge hosting.
+                  <strong style={{ color: '#fff' }}>Production Grade:</strong> Scalable TypeScript architecture & RESTful API integration.
                 </div>
               </div>
             </div>

@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div style={{ paddingTop: '1.5rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.84rem' }}>
-          © {new Date().getFullYear()} Masud Rana. Built with TypeScript, React, Vite & Tailwind CSS. Designed for Vercel deployment.
+          © {new Date().getFullYear()} Masud Rana. All rights reserved. Built with TypeScript, React & Tailwind CSS.
         </div>
       </div>
     </footer>
