@@ -4,7 +4,8 @@ import { Github, Linkedin, Mail, ArrowRight, Sparkles, CheckCircle2, ShieldCheck
 
 export const Hero: React.FC = () => {
   const titles = [
-    'Laravel Full Stack Developer',
+    'PHP & Laravel Full Stack Developer',
+    'Senior PHP Developer',
     'TypeScript & React Specialist',
     'REST API & RBAC Architect',
     'AI-Accelerated Software Engineer'
