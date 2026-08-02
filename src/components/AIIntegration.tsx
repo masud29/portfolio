@@ -24,7 +24,7 @@ export const AIIntegration: React.FC = () => {
     <section id="ai-workflow" style={{ padding: '5.5rem 0', background: 'var(--bg-primary)' }}>
       <div className="container">
         <div
-          className="gradient-border"
+          className="gradient-border ai-box"
           style={{
             padding: '3rem 2.5rem',
             background: 'linear-gradient(135deg, rgba(16, 23, 42, 0.9) 0%, rgba(30, 27, 75, 0.6) 100%)',
@@ -47,25 +47,25 @@ export const AIIntegration: React.FC = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '1.75rem'
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: '1.25rem'
             }}
           >
             {aiHighlights.map((item, idx) => (
               <div
                 key={idx}
                 style={{
-                  padding: '1.5rem',
+                  padding: '1.25rem 1.35rem',
                   borderRadius: 'var(--radius-md)',
                   background: 'rgba(255, 255, 255, 0.03)',
                   border: '1px solid var(--border-color)'
                 }}
               >
-                <div style={{ marginBottom: '1rem' }}>{item.icon}</div>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#fff', marginBottom: '0.5rem' }}>
+                <div style={{ marginBottom: '0.85rem' }}>{item.icon}</div>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', marginBottom: '0.4rem' }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
                   {item.description}
                 </p>
               </div>
@@ -73,6 +73,13 @@ export const AIIntegration: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          section#ai-workflow { padding: 3.5rem 0 !important; }
+          .ai-box { padding: 1.5rem 1.25rem !important; }
+        }
+      `}</style>
     </section>
   );
 };

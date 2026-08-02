@@ -29,7 +29,15 @@ export const Projects: React.FC = () => {
           </p>
 
           {/* Filter Categories */}
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.6rem', marginTop: '2rem', flexWrap: 'wrap' }}>
+          <div
+            className="touch-scroll no-scrollbar project-filter-tabs"
+            style={{
+              display: 'flex',
+              gap: '0.6rem',
+              marginTop: '1.75rem',
+              paddingBottom: '0.5rem'
+            }}
+          >
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -43,6 +51,8 @@ export const Projects: React.FC = () => {
                   fontSize: '0.88rem',
                   fontWeight: 500,
                   cursor: 'pointer',
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
                   transition: 'all 0.25s ease'
                 }}
               >
@@ -54,27 +64,28 @@ export const Projects: React.FC = () => {
 
         {/* Projects Cards Grid */}
         <div
+          className="projects-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-            gap: '2rem'
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gap: '1.75rem'
           }}
         >
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="gradient-border"
+              className="gradient-border project-card"
               style={{
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                padding: '2rem',
+                padding: '1.75rem',
                 background: 'rgba(13, 17, 29, 0.75)'
               }}
             >
               <div>
                 {/* Header Badge */}
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                   <span
                     style={{
                       fontSize: '0.78rem',
@@ -109,22 +120,22 @@ export const Projects: React.FC = () => {
                 </div>
 
                 {/* Title */}
-                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.5rem', fontWeight: 700, color: '#fff', marginBottom: '0.35rem' }}>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.35rem', fontWeight: 700, color: '#fff', marginBottom: '0.35rem' }}>
                   {project.title}
                 </h3>
-                <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '1rem', fontWeight: 500 }}>
+                <div style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: '1rem', fontWeight: 500 }}>
                   {project.subtitle}
                 </div>
 
                 {/* Description */}
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', lineHeight: 1.65, marginBottom: '1.25rem' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.65, marginBottom: '1.25rem' }}>
                   {project.description}
                 </p>
 
                 {/* Key Highlights */}
                 <div style={{ marginBottom: '1.5rem' }}>
                   {project.highlights.slice(0, 2).map((h, idx) => (
-                    <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.86rem', color: 'var(--text-secondary)', marginBottom: '0.4rem' }}>
+                    <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '0.4rem' }}>
                       <CheckCircle2 size={15} style={{ color: 'var(--accent-emerald)', flexShrink: 0, marginTop: '3px' }} />
                       <span>{h}</span>
                     </div>
@@ -192,6 +203,20 @@ export const Projects: React.FC = () => {
 
       {/* Modal Popup */}
       <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+
+      <style>{`
+        @media (min-width: 769px) {
+          .project-filter-tabs {
+            justify-content: center !important;
+            flex-wrap: wrap !important;
+          }
+        }
+        @media (max-width: 768px) {
+          section#projects { padding: 3.5rem 0 !important; }
+          .projects-grid { grid-template-columns: 1fr !important; gap: 1.25rem !important; }
+          .project-card { padding: 1.25rem !important; }
+        }
+      `}</style>
     </section>
   );
 };

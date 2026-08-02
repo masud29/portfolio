@@ -15,7 +15,7 @@ export const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    
+
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
@@ -38,12 +38,12 @@ export const Contact: React.FC = () => {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '0.8fr 1.2fr', gap: '3rem' }} className="contact-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: '0.8fr 1.2fr', gap: '2.5rem' }} className="contact-grid">
           {/* Contact Details Card */}
           <div
-            className="gradient-border"
+            className="gradient-border contact-card"
             style={{
-              padding: '2.25rem',
+              padding: '2rem',
               background: 'rgba(16, 23, 42, 0.8)',
               display: 'flex',
               flexDirection: 'column',
@@ -51,22 +51,22 @@ export const Contact: React.FC = () => {
             }}
           >
             <div>
-              <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#fff', marginBottom: '1.25rem', fontFamily: 'var(--font-heading)' }}>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#fff', marginBottom: '1.25rem', fontFamily: 'var(--font-heading)' }}>
                 Direct Contacts
               </h3>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2.5rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2rem' }}>
                 {/* Phone */}
                 <a
                   href={`tel:${PERSONAL_INFO.phone}`}
                   style={{ display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none', color: 'inherit' }}
                 >
-                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(99, 102, 241, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-indigo)' }}>
+                  <div style={{ width: '42px', height: '42px', borderRadius: '12px', background: 'rgba(99, 102, 241, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-indigo)', flexShrink: 0 }}>
                     <Phone size={20} />
                   </div>
-                  <div>
-                    <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>Call / WhatsApp</div>
-                    <div style={{ fontWeight: 600, color: '#fff', fontSize: '0.98rem' }}>{PERSONAL_INFO.phone}</div>
+                  <div style={{ overflow: 'hidden' }}>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Call / WhatsApp</div>
+                    <div style={{ fontWeight: 600, color: '#fff', fontSize: '0.92rem', wordBreak: 'break-all' }}>{PERSONAL_INFO.phone}</div>
                   </div>
                 </a>
 
@@ -75,23 +75,23 @@ export const Contact: React.FC = () => {
                   href={`mailto:${PERSONAL_INFO.email}`}
                   style={{ display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none', color: 'inherit' }}
                 >
-                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(168, 85, 247, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-purple)' }}>
+                  <div style={{ width: '42px', height: '42px', borderRadius: '12px', background: 'rgba(168, 85, 247, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-purple)', flexShrink: 0 }}>
                     <Mail size={20} />
                   </div>
-                  <div>
-                    <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>Direct Email</div>
-                    <div style={{ fontWeight: 600, color: '#fff', fontSize: '0.98rem' }}>{PERSONAL_INFO.email}</div>
+                  <div style={{ overflow: 'hidden' }}>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Direct Email</div>
+                    <div style={{ fontWeight: 600, color: '#fff', fontSize: '0.92rem', wordBreak: 'break-all' }}>{PERSONAL_INFO.email}</div>
                   </div>
                 </a>
 
                 {/* Location */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(6, 182, 212, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-cyan)' }}>
+                  <div style={{ width: '42px', height: '42px', borderRadius: '12px', background: 'rgba(6, 182, 212, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-cyan)', flexShrink: 0 }}>
                     <MapPin size={20} />
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>Location</div>
-                    <div style={{ fontWeight: 600, color: '#fff', fontSize: '0.98rem' }}>{PERSONAL_INFO.location}</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Location</div>
+                    <div style={{ fontWeight: 600, color: '#fff', fontSize: '0.92rem' }}>{PERSONAL_INFO.location}</div>
                   </div>
                 </div>
               </div>
@@ -127,13 +127,13 @@ export const Contact: React.FC = () => {
 
           {/* Interactive Form */}
           <div
-            className="gradient-border"
+            className="gradient-border contact-card"
             style={{
-              padding: '2.25rem',
+              padding: '2rem',
               background: 'rgba(16, 23, 42, 0.8)'
             }}
           >
-            <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#fff', marginBottom: '1.5rem', fontFamily: 'var(--font-heading)' }}>
+            <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#fff', marginBottom: '1.25rem', fontFamily: 'var(--font-heading)' }}>
               Send Me a Direct Message
             </h3>
 
@@ -144,8 +144,8 @@ export const Contact: React.FC = () => {
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem' }}>Thank you for reaching out. I will get back to you shortly.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }} className="form-row">
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }} className="form-row">
                   <div>
                     <label style={{ display: 'block', fontSize: '0.82rem', color: 'var(--text-secondary)', marginBottom: '0.35rem', fontWeight: 500 }}>
                       Your Name *
@@ -251,8 +251,12 @@ export const Contact: React.FC = () => {
 
       <style>{`
         @media (max-width: 850px) {
-          .contact-grid { grid-template-columns: 1fr !important; }
-          .form-row { grid-template-columns: 1fr !important; }
+          .contact-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+          .form-row { grid-template-columns: 1fr !important; gap: 1.1rem !important; }
+        }
+        @media (max-width: 768px) {
+          section#contact { padding: 3.5rem 0 !important; }
+          .contact-card { padding: 1.25rem !important; }
         }
       `}</style>
     </section>

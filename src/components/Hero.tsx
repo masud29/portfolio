@@ -72,9 +72,9 @@ export const Hero: React.FC = () => {
 
             {/* Main Headline */}
             <h1
+              className="hero-title"
               style={{
                 fontFamily: 'var(--font-heading)',
-                fontSize: '3.25rem',
                 fontWeight: 800,
                 lineHeight: 1.15,
                 letterSpacing: '-0.02em',
@@ -86,8 +86,8 @@ export const Hero: React.FC = () => {
 
             {/* Dynamic Subtitle Ticker */}
             <div
+              className="hero-subtitle"
               style={{
-                fontSize: '1.6rem',
                 fontWeight: 600,
                 color: 'var(--accent-indigo)',
                 minHeight: '2.4rem',
@@ -97,7 +97,7 @@ export const Hero: React.FC = () => {
                 marginBottom: '1.25rem'
               }}
             >
-              <Sparkles size={22} style={{ color: 'var(--accent-purple)' }} />
+              <Sparkles size={22} style={{ color: 'var(--accent-purple)', flexShrink: 0 }} />
               <span style={{ transition: 'all 0.4s ease' }}>{titles[currentTitleIndex]}</span>
             </div>
 
@@ -105,9 +105,9 @@ export const Hero: React.FC = () => {
             <p
               style={{
                 color: 'var(--text-secondary)',
-                fontSize: '1.08rem',
+                fontSize: '1.05rem',
                 lineHeight: 1.7,
-                marginBottom: '2rem',
+                marginBottom: '1.75rem',
                 maxWidth: '640px'
               }}
             >
@@ -119,41 +119,41 @@ export const Hero: React.FC = () => {
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '1.25rem',
-                marginBottom: '2.25rem',
+                gap: '1rem',
+                marginBottom: '2rem',
                 color: 'var(--text-muted)',
-                fontSize: '0.9rem'
+                fontSize: '0.88rem'
               }}
             >
               <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <MapPin size={16} style={{ color: 'var(--accent-cyan)' }} />
+                <MapPin size={16} style={{ color: 'var(--accent-cyan)', flexShrink: 0 }} />
                 {PERSONAL_INFO.location}
               </span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <ShieldCheck size={16} style={{ color: 'var(--accent-emerald)' }} />
+                <ShieldCheck size={16} style={{ color: 'var(--accent-emerald)', flexShrink: 0 }} />
                 Dhaka Apps Limited (Junior Engineer)
               </span>
             </div>
 
             {/* CTAs & Social Buttons */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.85rem', marginBottom: '2.5rem' }}>
-              <a href="/Masud_Rana_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary">
+            <div className="hero-ctas" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.85rem', marginBottom: '2.5rem' }}>
+              <a href="/Masud_Rana_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary hero-btn">
                 <Download size={18} />
                 <span>Download Resume (PDF)</span>
               </a>
 
-              <a href="#projects" className="btn-secondary">
+              <a href="#projects" className="btn-secondary hero-btn">
                 <span>View Projects</span>
                 <ArrowRight size={16} />
               </a>
 
-              <a href="#contact" className="btn-secondary">
+              <a href="#contact" className="btn-secondary hero-btn">
                 <Mail size={16} />
                 <span>Contact</span>
               </a>
 
               {/* Social Icons */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginLeft: '0.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                 <a
                   href={PERSONAL_INFO.github}
                   target="_blank"
@@ -220,6 +220,7 @@ export const Hero: React.FC = () => {
                       fontWeight: 800,
                       color: '#fff'
                     }}
+                    className="stat-val"
                   >
                     {stat.value}
                   </div>
@@ -232,7 +233,7 @@ export const Hero: React.FC = () => {
           {/* Hero Right Code Card / Avatar Visual */}
           <div style={{ position: 'relative' }}>
             <div
-              className="gradient-border"
+              className="gradient-border hero-code-card"
               style={{
                 padding: '1.75rem',
                 background: 'rgba(15, 23, 42, 0.85)',
@@ -245,7 +246,7 @@ export const Hero: React.FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  marginBottom: '1.25rem',
+                  marginBottom: '1rem',
                   paddingBottom: '0.75rem',
                   borderBottom: '1px solid var(--border-color)'
                 }}
@@ -264,11 +265,13 @@ export const Hero: React.FC = () => {
               <pre
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '0.85rem',
+                  fontSize: '0.82rem',
                   color: '#e2e8f0',
-                  lineHeight: 1.7,
-                  overflowX: 'auto'
+                  lineHeight: 1.65,
+                  overflowX: 'auto',
+                  paddingBottom: '0.5rem'
                 }}
+                className="no-scrollbar"
               >
                 <code>
                   <span style={{ color: '#c084fc' }}>const</span> <span style={{ color: '#38bdf8' }}>developer</span> = &#123;{'\n'}
@@ -288,8 +291,8 @@ export const Hero: React.FC = () => {
               {/* Verified Badge */}
               <div
                 style={{
-                  marginTop: '1.5rem',
-                  padding: '0.85rem',
+                  marginTop: '1.25rem',
+                  padding: '0.75rem',
                   borderRadius: 'var(--radius-sm)',
                   background: 'rgba(99, 102, 241, 0.1)',
                   border: '1px solid rgba(99, 102, 241, 0.2)',
@@ -298,8 +301,8 @@ export const Hero: React.FC = () => {
                   gap: '0.75rem'
                 }}
               >
-                <CheckCircle2 size={20} style={{ color: 'var(--accent-indigo)' }} />
-                <div style={{ fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
+                <CheckCircle2 size={20} style={{ color: 'var(--accent-indigo)', flexShrink: 0 }} />
+                <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>
                   <strong style={{ color: '#fff' }}>Production Grade:</strong> Scalable TypeScript architecture & RESTful API integration.
                 </div>
               </div>
@@ -309,9 +312,27 @@ export const Hero: React.FC = () => {
       </div>
 
       <style>{`
+        .hero-title { font-size: 3.25rem; }
+        .hero-subtitle { font-size: 1.6rem; }
+        
         @media (max-width: 992px) {
           .hero-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
           .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 1.25rem !important; }
+        }
+
+        @media (max-width: 768px) {
+          section#about { padding-top: 6.5rem !important; padding-bottom: 3.5rem !important; }
+          .hero-title { font-size: 2.35rem !important; }
+          .hero-subtitle { font-size: 1.25rem !important; min-height: 2rem !important; }
+          .hero-code-card { padding: 1.15rem !important; }
+        }
+
+        @media (max-width: 480px) {
+          .hero-title { font-size: 1.95rem !important; }
+          .hero-subtitle { font-size: 1.1rem !important; }
+          .hero-ctas { gap: 0.6rem !important; }
+          .hero-btn { width: 100% !important; justify-content: center !important; }
+          .stat-val { font-size: 1.4rem !important; }
         }
       `}</style>
     </section>

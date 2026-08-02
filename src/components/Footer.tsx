@@ -11,6 +11,7 @@ export const Footer: React.FC = () => {
     <footer style={{ background: '#05070a', borderTop: '1px solid var(--border-color)', padding: '3rem 0 2rem 0' }}>
       <div className="container">
         <div
+          className="footer-wrapper"
           style={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -32,14 +33,14 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Social Links */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+            <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }} title="GitHub">
               <Github size={20} />
             </a>
-            <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
+            <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none' }} title="LinkedIn">
               <Linkedin size={20} />
             </a>
-            <a href={`mailto:${PERSONAL_INFO.email}`} style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
+            <a href={`mailto:${PERSONAL_INFO.email}`} style={{ color: 'var(--text-secondary)', textDecoration: 'none' }} title="Email">
               <Mail size={20} />
             </a>
           </div>
@@ -66,9 +67,20 @@ export const Footer: React.FC = () => {
         </div>
 
         <div style={{ paddingTop: '1.5rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.84rem' }}>
-          © {new Date().getFullYear()} Masud Rana. All rights reserved. Built with TypeScript, React & Tailwind CSS.
+          © {new Date().getFullYear()} Masud Rana. All rights reserved. Built with TypeScript, React & Vanilla CSS.
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .footer-wrapper {
+            flex-direction: column !important;
+            justify-content: center !important;
+            text-align: center !important;
+            gap: 1.25rem !important;
+          }
+        }
+      `}</style>
     </footer>
   );
 };

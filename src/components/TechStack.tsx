@@ -58,12 +58,12 @@ export const TechStack: React.FC = () => {
 
           {/* Category Filter Tabs */}
           <div
+            className="touch-scroll no-scrollbar filter-tabs-container"
             style={{
               display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'center',
               gap: '0.6rem',
-              marginTop: '2rem'
+              marginTop: '1.75rem',
+              paddingBottom: '0.5rem'
             }}
           >
             {categories.map((cat) => (
@@ -74,14 +74,16 @@ export const TechStack: React.FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.45rem',
-                  padding: '0.55rem 1.1rem',
+                  padding: '0.5rem 1.1rem',
                   borderRadius: 'var(--radius-full)',
                   border: activeCategory === cat.value ? '1px solid var(--accent-indigo)' : '1px solid var(--border-color)',
                   background: activeCategory === cat.value ? 'var(--gradient-brand)' : 'rgba(255,255,255,0.04)',
                   color: '#fff',
                   fontWeight: 500,
-                  fontSize: '0.88rem',
+                  fontSize: '0.85rem',
                   cursor: 'pointer',
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
                   transition: 'all 0.25s ease'
                 }}
               >
@@ -94,9 +96,10 @@ export const TechStack: React.FC = () => {
 
         {/* Modern Tag Cloud Grid */}
         <div
+          className="skills-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
             gap: '1.25rem'
           }}
         >
@@ -105,9 +108,9 @@ export const TechStack: React.FC = () => {
             return (
               <div
                 key={index}
-                className="gradient-border"
+                className="gradient-border skill-card"
                 style={{
-                  padding: '1.25rem 1.5rem',
+                  padding: '1.25rem 1.35rem',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -117,7 +120,7 @@ export const TechStack: React.FC = () => {
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                    <h3 style={{ fontSize: '1.02rem', fontWeight: 700, color: '#fff', lineHeight: 1.3 }}>{skill.name}</h3>
+                    <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#fff', lineHeight: 1.3 }}>{skill.name}</h3>
                     {skill.tag && (
                       <span
                         style={{
@@ -165,6 +168,23 @@ export const TechStack: React.FC = () => {
           })}
         </div>
       </div>
+
+      <style>{`
+        @media (min-width: 769px) {
+          .filter-tabs-container {
+            justify-content: center !important;
+            flex-wrap: wrap !important;
+          }
+        }
+        @media (max-width: 768px) {
+          section#skills { padding: 3.5rem 0 !important; }
+          .skills-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important; gap: 0.85rem !important; }
+          .skill-card { padding: 1rem 1.15rem !important; }
+        }
+        @media (max-width: 480px) {
+          .skills-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </section>
   );
 };

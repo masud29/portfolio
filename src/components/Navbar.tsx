@@ -96,37 +96,41 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
         </nav>
 
         {/* Action Buttons */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
           <a
             href="/Masud_Rana_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-secondary"
+            className="btn-secondary desktop-action-btn"
             style={{ padding: '0.55rem 1rem', fontSize: '0.85rem' }}
           >
             <Download size={15} />
             <span>Resume (PDF)</span>
           </a>
 
-          <button onClick={onContactClick} className="btn-primary" style={{ padding: '0.55rem 1.2rem', fontSize: '0.88rem' }}>
+          <button onClick={onContactClick} className="btn-primary desktop-action-btn" style={{ padding: '0.55rem 1.2rem', fontSize: '0.88rem' }}>
             <span>Hire Me</span>
             <ArrowUpRight size={16} />
           </button>
 
-          {/* Mobile Hamburger */}
+          {/* Mobile Hamburger Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             style={{
               display: 'none',
-              background: 'transparent',
-              border: 'none',
+              background: 'rgba(255,255,255,0.06)',
+              border: '1px solid var(--border-color)',
+              borderRadius: '8px',
               color: '#fff',
               cursor: 'pointer',
-              padding: '0.5rem'
+              padding: '0.45rem',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
+            aria-label="Toggle Navigation Menu"
             className="mobile-toggle"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
@@ -139,12 +143,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
             top: '100%',
             left: 0,
             right: 0,
-            background: 'var(--bg-secondary)',
+            background: 'rgba(13, 17, 29, 0.96)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
             borderBottom: '1px solid var(--border-color)',
-            padding: '1.5rem',
+            padding: '1.5rem 1.25rem',
             display: 'flex',
             flexDirection: 'column',
             gap: '1rem',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.6)',
+            animation: 'mobileMenuSlide 0.25s ease-out'
           }}
         >
           {navLinks.map((link) => (
@@ -155,20 +163,54 @@ export const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
               style={{
                 color: 'var(--text-primary)',
                 textDecoration: 'none',
-                fontSize: '1rem',
-                fontWeight: 500,
+                fontSize: '1.05rem',
+                fontWeight: 600,
+                padding: '0.5rem 0',
+                borderBottom: '1px solid rgba(255,255,255,0.04)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between'
               }}
             >
-              {link.name}
+              <span>{link.name}</span>
+              <ArrowUpRight size={16} style={{ color: 'var(--text-muted)' }} />
             </a>
           ))}
+
+          {/* Action CTAs inside mobile drawer */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', paddingTop: '0.75rem' }}>
+            <a
+              href="/Masud_Rana_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              style={{ justifyContent: 'center', width: '100%', padding: '0.75rem' }}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Download size={18} />
+              <span>Download Resume (PDF)</span>
+            </a>
+
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onContactClick();
+              }}
+              className="btn-secondary"
+              style={{ justifyContent: 'center', width: '100%', padding: '0.75rem' }}
+            >
+              <span>Hire Me</span>
+              <ArrowUpRight size={16} />
+            </button>
+          </div>
         </div>
       )}
 
       <style>{`
         @media (max-width: 850px) {
           .desktop-nav { display: none !important; }
-          .mobile-toggle { display: block !important; }
+          .desktop-action-btn { display: none !important; }
+          .mobile-toggle { display: flex !important; }
         }
       `}</style>
     </header>
