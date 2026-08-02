@@ -4,7 +4,7 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://masud-dev.vercel.app/</loc>
+    <loc>https://masud-dev-portfolio.vercel.app/</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>

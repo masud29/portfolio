@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://masud-dev.vercel.app/sitemap.xml
+Sitemap: https://masud-dev-portfolio.vercel.app/sitemap.xml
